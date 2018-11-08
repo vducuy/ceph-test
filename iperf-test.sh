@@ -47,7 +47,7 @@ done
 for wsize in 512 1M 2M 4M 
 do
 	#echo "iperf3 -c ${SERVER_NODE} -f m -w $wsize -n ${NBYTES}"	
-	log_file=${LOG_DIR}/iperf-${SERVER_NODE}-Mdefault-w${WSIZE}-n${NBYTES}.log
+	log_file=${LOG_DIR}/iperf-${SERVER_NODE}-Mdefault-w$wsize-n${NBYTES}.log
 	echo $log_file
 	iperf3 -c ${SERVER_NODE} -f k -O ${OSEC} -w $wsize -n ${NBYTES} > ${LOG_DIR}/iperf-${SERVER_NODE}-w$wsize-n${NBYTES}.log
 	sleep 5
