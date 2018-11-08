@@ -49,7 +49,7 @@ do
 	#echo "iperf3 -c ${SERVER_NODE} -f m -w $wsize -n ${NBYTES}"	
 	log_file=${LOG_DIR}/iperf-${SERVER_NODE}-Mdefault-w$wsize-n${NBYTES}.log
 	echo $log_file
-	iperf3 -c ${SERVER_NODE} -f k -O ${OSEC} -w $wsize -n ${NBYTES} > ${LOG_DIR}/iperf-${SERVER_NODE}-w$wsize-n${NBYTES}.log
+	iperf3 -c ${SERVER_NODE} -f k -O ${OSEC} -w $wsize -n ${NBYTES} > ${log_file} 
 	sleep 5
 done
 
@@ -61,4 +61,5 @@ done
 #	sleep 5
 #done
 
-
+#-------------------------------
+tar cvzf iperf-${SERVER_NODE}-${SESSION_LOG}.tar.gz ${LOG_DIR}
